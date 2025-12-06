@@ -7,10 +7,8 @@ body {
     box-sizing: border-box;
     /* 优先使用楷体，营造古风 */
     font-family: "KaiTi", "STKaiti", "SimSun", serif; 
-    /* 背景：深沉的米黄色，模拟旧宣纸，或者你可以找一张云纹背景图替换 url() */
-    background: #fdfbf3 radial-gradient(circle, #fdfbf3 0%, #e8dfc4 100%);
-    color: #4a3b3b;
-    padding-bottom: 60px;
+    background: url('image/bg.jpg') repeat; /* 使用图片平铺 */
+    background-size: cover;
 }
 
 /* 2. 头部设计 - 增加仪式感 */
@@ -165,3 +163,4 @@ header p {
     color: #8E2323;
     opacity: 0.8;
 }
+
