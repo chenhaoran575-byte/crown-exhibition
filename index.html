@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凤冠霞帔 - 历代皇后礼冠展</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bg-music" src="music/gufeng.mp3" loop></audio>
+    <button id="music-btn" onclick="toggleMusic()">🎵</button>
+
+    <header>
+        <h1>母仪天下</h1>
+        <p>唐宋至明清皇后礼冠演变</p>
+    </header>
+
+    <main id="gallery">
+        <div class="card" onclick="openModal('ming_9')">
+            <div class="img-box">
+                <img src="images/ming-9.jpg" alt="明孝端皇后九龙九凤冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">明代</span>
+                <h3>九龙九凤冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('ming_12')">
+            <div class="img-box">
+                <img src="images/ming-12.jpg" alt="十二龙九凤冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">明代</span>
+                <h3>十二龙九凤冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('sui_tang')">
+            <div class="img-box">
+                <img src="images/sui-tang.jpg" alt="萧皇后花树冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">隋 / 唐</span>
+                <h3>萧皇后花树冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('qing')">
+            <div class="img-box">
+                <img src="images/qing.jpg" alt="貂皮嵌珠皇后冬朝冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">清代</span>
+                <h3>貂皮嵌珠冬朝冠</h3>
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 多媒体技术大作业展示</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
