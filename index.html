@@ -16,10 +16,48 @@
         <p>唐宋至明清皇后礼冠演变</p>
     </header>
 
+    <section id="dynasty-intro">
+        <h2 class="section-title">👑 礼冠演变简史</h2>
+        <div class="dynasty-grid">
+            <div class="dynasty-item">
+                <div class="dynasty-badge">唐 / Tang</div>
+                <h3>钗冠过渡 · 步摇生姿</h3>
+                <p>唐代礼制尚以“钿钗礼衣”为主，但宫中已现高冠插凤之风。凤嘴衔长缨，下坠“步摇”，莲步轻移间摇曳生姿，开启了后世凤冠的雏形。</p>
+            </div>
+            
+            <div class="dynasty-item">
+                <div class="dynasty-badge">宋 / Song</div>
+                <h3>纳入礼制 · 冠饰盛行</h3>
+                <p>宋代女子戴冠之风极盛，凤冠正式被纳入后妃冠服制度。在受册、朝贺等隆重场合，皇后必须按规定佩戴凤冠，确立其礼仪地位。</p>
+            </div>
+
+            <div class="dynasty-item">
+                <div class="dynasty-badge">元 / Yuan</div>
+                <h3>蒙古风俗 · 独特审美</h3>
+                <p>受蒙古族风俗影响，冠饰风格迥异，也是历史上礼冠形制的一次特殊转折，成为了后来明代主张“恢复汉制”的历史背景。</p>
+            </div>
+
+            <div class="dynasty-item highlight">
+                <div class="dynasty-badge">明 / Ming</div>
+                <h3>承宋启后 · 龙凤交辉</h3>
+                <p>明初参照宋代形制并加以发展。饰以龙凤花钗，辅以点翠与花丝镶嵌技艺。此时凤冠不仅是权力的象征，更是中国古代工艺的巅峰。</p>
+            </div>
+
+            <div class="dynasty-item">
+                <div class="dynasty-badge">清 / Qing</div>
+                <h3>去龙留凤 · 独尊东珠</h3>
+                <p>形制发生重大变化，冠上不再饰龙，仅保留金凤。极度推崇“东珠”（淡水珍珠），以多重凤顶与东珠层叠，尽显满族皇室威仪。</p>
+            </div>
+        </div>
+    </section>
+
     <div id="toolbar">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="🔍 输入关键词搜索（如：珍珠、明代）..." onkeyup="searchCrowns()">
+            <input type="text" id="search-input" placeholder="🔍 搜搜看（如：珍珠、明代）..." onkeyup="searchCrowns()">
         </div>
+        
+        <button class="craft-btn" onclick="openCraftModal()">💎 探索大明绝世工艺</button>
+
         <div class="filter-btns">
             <button class="filter-btn active" onclick="filterDynasty('all', this)">全部</button>
             <button class="filter-btn" onclick="filterDynasty('明代', this)">明代</button>
@@ -74,21 +112,40 @@
 
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            
+            <span class="close" onclick="closeModal('modal')">&times;</span>
             <div style="position: relative; overflow: hidden; border-radius: 5px;">
                 <img id="modal-img" src="" alt="礼冠详情图">
                 <div class="zoom-hint">☝️ 点击图片放大查看细节</div>
             </div>
-
             <h2 id="modal-title"></h2>
             <p id="modal-desc"></p>
-
             <div id="quiz-section">
                 <div class="quiz-header">👑 皇家知识小测验</div>
                 <p id="quiz-question"></p>
                 <div id="quiz-options"></div>
                 <p id="quiz-result"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="craft-modal" class="modal">
+        <div class="modal-content craft-content">
+            <span class="close" onclick="closeModal('craft-modal')">&times;</span>
+            <h2>大明匠心 · 三大绝技</h2>
+            <div class="craft-text">
+                <h3>1. 錾刻 (Zanke)</h3>
+                <p>源于商周青铜工艺。工匠需在金银底板上，利用“錾子”通过千万次的敲击，雕刻出花朵与枝叶的立体形态，赋予金属栩栩如生的生命力。</p>
+                
+                <h3>2. 花丝 (Filigree)</h3>
+                <p>被誉为“燕京八绝”之首。工匠需将银条拉制成细如发丝的银线，经由堆、垒、编、织，将坚硬的金属化为柔软的丝帛感，构建出凤冠精妙绝伦的骨架。</p>
+                
+                <h3>3. 点翠 (Tian-tsui)</h3>
+                <p>皇室独享的色彩美学。为中和黄金的俗气，工匠将翠鸟的羽毛镶嵌于金座之上。这种亮泽的翠蓝与金光交相辉映，既保留了皇家的富贵，又增添了灵动的气韵。</p>
+                
+                <hr>
+                <p style="font-style:italic; font-size:0.9rem; color:#666;">
+                    * 镇馆之宝：明孝端皇后九龙九凤冠，共嵌未经加工的天然红宝石115块，珍珠4414颗，集上述工艺之大成。
+                </p>
             </div>
         </div>
     </div>
