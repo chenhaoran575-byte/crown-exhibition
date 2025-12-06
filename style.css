@@ -1,135 +1,167 @@
-/* 全局重置 */
-* {
+/* style.css - 皇家博物馆风格版 */
+
+/* 1. 全局字体与背景设置 */
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* 优先使用楷体，营造古风 */
+    font-family: "KaiTi", "STKaiti", "SimSun", serif; 
+    /* 背景：深沉的米黄色，模拟旧宣纸，或者你可以找一张云纹背景图替换 url() */
+    background: #fdfbf3 radial-gradient(circle, #fdfbf3 0%, #e8dfc4 100%);
+    color: #4a3b3b;
+    padding-bottom: 60px;
 }
 
-body {
-    font-family: "KaiTi", "STKaiti", serif; /* 使用楷体增强古风感 */
-    background-color: #f7f3e8; /* 米色宣纸感背景 */
-    color: #333;
-    padding-bottom: 50px;
-}
-
+/* 2. 头部设计 - 增加仪式感 */
 header {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(to bottom, #B3382C, #902b21);
-    color: #E6C35C;
-    border-bottom: 5px solid #E6C35C;
+    padding: 50px 20px;
+    /* 渐变故宫红背景 */
+    background: linear-gradient(180deg, #8E2323 0%, #5a1212 100%);
+    color: #FFD700; /* 金色文字 */
+    border-bottom: 4px double #FFD700; /* 双线金边 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
+    font-weight: normal;
+    letter-spacing: 8px; /* 字间距拉大，显得大气 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
 }
 
-/* 画廊布局 */
+header p {
+    font-size: 1rem;
+    color: #e0c8c8;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* 3. 画廊布局 */
 #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
-    gap: 20px;
+    padding: 0 15px;
+    gap: 25px;
 }
 
+/* 4. 卡片设计 - 核心升级点 */
 .card {
     background: #fff;
     width: 100%;
-    max-width: 350px; /* 移动端适配 */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 340px;
+    border-radius: 8px;
+    /* 金色边框 */
+    border: 2px solid #d4af37; 
+    /* 高级阴影，让卡片看起来悬浮 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s;
-    border: 1px solid #d4c4b5;
+    transition: all 0.4s ease; /* 平滑过渡 */
+    
+    /* 初始状态：稍微向下沉一点，透明一点，为了做进场动画 */
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards; /* 调用动画 */
 }
 
+/* 给卡片加一点交互动效：按下去会缩小一点点 */
 .card:active {
     transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
+/* 5. 图片容器 - 模拟展柜 */
 .img-box {
     width: 100%;
-    height: 250px;
-    background-color: #333;
-    overflow: hidden;
+    height: 260px;
+    background-color: #2b2b2b; /* 深色底衬托金冠 */
+    border-bottom: 4px solid #8E2323; /* 图片底部加一道红线 */
+    position: relative;
 }
 
 .img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保证图片填满且不变形 */
+    object-fit: contain; /* 改为 contain，确保皇冠完整显示不被裁剪 */
+    padding: 10px; /* 给图片留白，像展品 */
 }
 
+/* 6. 文字信息 */
 .info {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
+    background-image: linear-gradient(to top, #fff 0%, #f9f9f9 100%);
 }
 
 .dynasty {
     display: inline-block;
-    background-color: #B3382C;
-    color: #fff;
-    padding: 2px 8px;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    margin-bottom: 5px;
+    border: 1px solid #8E2323;
+    color: #8E2323;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
 }
 
-/* 音乐按钮 */
+.info h3 {
+    font-size: 1.4rem;
+    margin: 10px 0 0;
+    color: #333;
+}
+
+/* 7. 定义进场动画 - 让网页活起来 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 利用 nth-child 让卡片一个接一个出来，而不是同时出来 */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.5s; }
+.card:nth-child(4) { animation-delay: 0.7s; }
+
+/* 8. 音乐按钮优化 */
 #music-btn {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    background: #8E2323;
+    border: 2px solid #FFD700;
+    color: white;
+    font-size: 20px;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    /* 让按钮旋转起来 */
+    animation: rotate 5s linear infinite;
+    animation-play-state: paused; /* 默认暂停，播放时JS控制它转动 */
 }
 
-/* 弹窗样式 */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.8); 
-    backdrop-filter: blur(5px);
-    overflow-y: auto;
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
+/* 9. 弹窗美化 */
 .modal-content {
-    background-color: #f7f3e8;
-    margin: 10% auto; 
-    padding: 20px;
-    border: 2px solid #E6C35C;
-    width: 85%;
-    max-width: 600px;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
+    background-color: #fffbf0;
+    border: 4px solid #8E2323;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#modal-img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    color: #8E2323;
+    opacity: 0.8;
 }
