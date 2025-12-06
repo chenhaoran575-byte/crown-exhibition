@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>凤冠霞帔 - 历代皇后礼冠展</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/ming-9.jpg" type="image/jpeg">
 </head>
 <body>
     <audio id="bg-music" src="bgm.mp3" loop></audio>
@@ -14,6 +15,18 @@
         <h1>母仪天下</h1>
         <p>唐宋至明清皇后礼冠演变</p>
     </header>
+
+    <div id="toolbar">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="🔍 输入关键词搜索（如：珍珠、明代）..." onkeyup="searchCrowns()">
+        </div>
+        <div class="filter-btns">
+            <button class="filter-btn active" onclick="filterDynasty('all', this)">全部</button>
+            <button class="filter-btn" onclick="filterDynasty('明代', this)">明代</button>
+            <button class="filter-btn" onclick="filterDynasty('唐', this)">唐/五代</button>
+            <button class="filter-btn" onclick="filterDynasty('清代', this)">清代</button>
+        </div>
+    </div>
 
     <main id="gallery">
         <div class="card" onclick="openModal('ming_9')">
@@ -57,13 +70,15 @@
         </div>
     </main>
 
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             
             <div style="position: relative; overflow: hidden; border-radius: 5px;">
-                <img id="modal-img" src="" alt="">
-                <div class="zoom-hint">点击图片放大查看细节</div>
+                <img id="modal-img" src="" alt="礼冠详情图">
+                <div class="zoom-hint">☝️ 点击图片放大查看细节</div>
             </div>
 
             <h2 id="modal-title"></h2>
@@ -85,4 +100,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
