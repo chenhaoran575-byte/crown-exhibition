@@ -346,3 +346,27 @@ header p {
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 footer { text-align: center; padding: 30px; color: #999; font-size: 0.8rem; }
+/* --- 工艺弹窗图片的专用样式 --- */
+
+/* 1. 图片样式 */
+.craft-img {
+    width: 100%;             /* 宽度撑满弹窗 */
+    max-height: 200px;       /* 高度限制，防止图片太长占满屏幕 */
+    object-fit: cover;       /* 裁剪模式，保证图片填满框框不变形 */
+    border-radius: 8px;      /* 圆角 */
+    margin: 10px 0;          /* 上下留白 */
+    border: 1px solid #d4af37; /* 加个细金边，显精致 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加一点阴影 */
+    transition: transform 0.3s;
+}
+
+/* 2. 鼠标悬停微放大 */
+.craft-img:hover {
+    transform: scale(1.02);
+}
+
+/* 3. 调整标题间距 */
+.craft-text h3 {
+    margin-top: 25px; /* 让每个标题离上面的内容远一点，区分清楚 */
+}
+
