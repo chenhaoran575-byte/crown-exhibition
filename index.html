@@ -60,13 +60,56 @@
 
         <div class="filter-btns">
             <button class="filter-btn active" onclick="filterDynasty('all', this)">全部</button>
-            <button class="filter-btn" onclick="filterDynasty('明代', this)">明代</button>
             <button class="filter-btn" onclick="filterDynasty('唐', this)">唐/五代</button>
+            <button class="filter-btn" onclick="filterDynasty('宋代', this)">宋代</button>
+              <button class="filter-btn" onclick="filterDynasty('元', this)">元</button>
+             <button class="filter-btn" onclick="filterDynasty('明代', this)">明代</button>
             <button class="filter-btn" onclick="filterDynasty('清代', this)">清代</button>
+          
+            
         </div>
     </div>
 
     <main id="gallery">
+        <div class="card" onclick="openModal('song')">
+            <div class="img-box">
+                <img src="images/song.jpg" alt="宋代九龙四凤冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">宋代</span>
+                <h3>九龙四凤冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('yuan')">
+            <div class="img-box">
+                <img src="images/yuan.jpg" alt="元代贵族姑姑冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">元代</span>
+                <h3>七宝重顶姑姑冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('ming_3')">
+            <div class="img-box">
+                <img src="images/ming-3.jpg" alt="孝靖皇后三龙二凤冠">
+            </div>
+            <div class="info">
+                <span class="dynasty">明代</span>
+                <h3>三龙二凤冠</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('qing_dianzi')">
+            <div class="img-box">
+                <img src="images/qing-dianzi.jpg" alt="金累丝点翠凤钿">
+            </div>
+            <div class="info">
+                <span class="dynasty">清代</span>
+                <h3>金累丝点翠凤钿</h3>
+            </div>
+        </div>
         <div class="card" onclick="openModal('ming_9')">
             <div class="img-box">
                 <img src="images/ming-9.jpg" alt="明孝端皇后九龙九凤冠">
@@ -160,4 +203,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
